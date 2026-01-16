@@ -48,7 +48,7 @@ options(scipen = 999)  # Prevent scientific notation
 # Load data MODIFY PATH WHEN DATA ARE AVAILABLE ONLINE
 features_processed <-
   fread(
-    "/Users/ruben/Documents/_Thèse/San Diego/Img Processing/features_processed_final_test.csv"
+    "data/features_processed.csv"
   )
 
 # Convert to data frame
@@ -526,9 +526,9 @@ taxa_shapes <- c(
   "Copepoda_noncalanoida" = 24
 )
 
-# Indicate path to picture MODIFY PATH BEFORE SUBMISSION
+# Indicate path to picture MODIFY PATH WHEN DATA ARE AVAILABLE ONLINE
 img_png <- str_c(
-  "/Users/ruben/Documents/_Thèse/San Diego/Img Processing/Processed_pictures/",
+  "data/pictures/",
   features_processed_scale_yeo_norm$taxon, "/", features_processed_scale_yeo_norm$objid
 )
 
@@ -1866,7 +1866,7 @@ ggplot(combined_counts, aes(x = reorder(taxon, n_morphotypes), y = n_morphotypes
 # Load df MODIFY PATH WHEN DATA ARE AVAILABLE ONLINE
 abd_data_sum <-
   read.csv(
-    "/Users/ruben/Documents/_Thèse/San Diego/Img Processing/abundance_biomasse_data.csv")
+    "data/abundance_biomasse_data.csv")
 
 # Define a proper scale for
 fill_scale <- scale_fill_manual(values = taxa_colors)
@@ -2367,7 +2367,7 @@ ggsave("FigS8.png", plot = Abd_Bio_Year_taxa, units = "in", width = 5, height = 
 # Load same df with El Nino and Transparency variables MODIFY PATH WHEN DATA ARE AVAILABLE ONLINE
 morpho_hypervolume_var <-
   read.csv(
-    "/Users/ruben/Documents/_Thèse/San Diego/Img Processing/morpho_hypervolume_var.csv")
+    "data/morpho_hypervolume_var.csv")
 
 # Delete lines with NA
 morpho_hypervolume_var <- morpho_hypervolume_var %>%
