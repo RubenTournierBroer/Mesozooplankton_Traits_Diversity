@@ -2622,7 +2622,6 @@ p$layers[[2]]$aes_params$size <- 0.3
 visreg_data <- p$data
 all_years <- sort(unique(visreg_data$x))  
 every_two_years <- all_years[seq(1, length(all_years), by = 2)]
-# Add your own custom summary points / CIs
 plot_rich_year <- p +
   annotate("rect", xmin = 2015, xmax = 2016, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
   annotate("rect", xmin = 2023, xmax = 2024, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
@@ -2649,7 +2648,6 @@ plot_rich_year <- p +
     legend.background = element_rect(fill = rgb(1,1,1,0.65), colour = NA),
     legend.key = element_blank(),
     legend.key.size = unit(0.1, "in"),
-    # the rest of your theme
     panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
     axis.text   = element_text(size = 9  * scale_all),
@@ -2690,7 +2688,6 @@ p$layers[[2]]$aes_params$size <- 0.3
 visreg_data <- p$data
 all_years <- sort(unique(visreg_data$x))  
 every_two_years <- all_years[seq(1, length(all_years), by = 2)]
-# Add your own custom summary points / CIs
 plot_eve_year <- p +
   annotate("rect", xmin = 2015, xmax = 2016, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
   annotate("rect", xmin = 2023, xmax = 2024, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
@@ -2747,7 +2744,6 @@ p$layers[[2]]$aes_params$size <- 0.3
 visreg_data <- p$data
 all_years <- sort(unique(visreg_data$x))  
 every_two_years <- all_years[seq(1, length(all_years), by = 2)]
-# Add your own custom summary points / CIs
 plot_div_year <- p +
   annotate("rect", xmin = 2015, xmax = 2016, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
   annotate("rect", xmin = 2023, xmax = 2024, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
@@ -2804,7 +2800,6 @@ p$layers[[2]]$aes_params$size <- 0.3
 visreg_data <- p$data
 all_years <- sort(unique(visreg_data$x))  
 every_two_years <- all_years[seq(1, length(all_years), by = 2)]
-# Add your own custom summary points / CIs
 plot_PC1_year <- p +
   annotate("rect", xmin = 2015, xmax = 2016, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
   annotate("rect", xmin = 2023, xmax = 2024, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
@@ -2861,7 +2856,6 @@ p$layers[[2]]$aes_params$size <- 0.3
 visreg_data <- p$data
 all_years <- sort(unique(visreg_data$x))  
 every_two_years <- all_years[seq(1, length(all_years), by = 2)]
-# Add your own custom summary points / CIs
 plot_PC2_year <- p +
   annotate("rect", xmin = 2015, xmax = 2016, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
   annotate("rect", xmin = 2023, xmax = 2024, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
@@ -2917,7 +2911,6 @@ p$layers[[2]]$aes_params$size <- 0.3
 visreg_data <- p$data
 all_years <- sort(unique(visreg_data$x))  
 every_two_years <- all_years[seq(1, length(all_years), by = 2)]
-# Add your own custom summary points / CIs
 plot_PC3_year <- p +
   annotate("rect", xmin = 2015, xmax = 2016, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
   annotate("rect", xmin = 2023, xmax = 2024, ymin = -Inf, ymax = Inf, fill = "darkgrey", alpha = 0.7) +
@@ -3043,7 +3036,6 @@ plot_rich_coast <- p +
     legend.background = element_rect(fill = rgb(1,1,1,0.65), colour = NA),
     legend.key = element_blank(),
     legend.key.size = unit(0.1, "in"),
-    # the rest of your theme
     panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
     axis.text   = element_text(size = 9  * scale_all),
@@ -3150,7 +3142,6 @@ for (i in seq_along(p$layers)) {
   keep <- !is.na(mins[idx]) & df[[xcol]] >= mins[idx] & df[[xcol]] <= maxs[idx]
   p$layers[[i]]$data <- df[keep, , drop = FALSE]
 }
-# tidy up layers + add your summaries
 # Style
 for (i in seq_along(p$layers)) {
   if (inherits(p$layers[[i]]$geom, "GeomPolygon")) {
@@ -3216,7 +3207,6 @@ for (i in seq_along(p$layers)) {
   keep <- !is.na(mins[idx]) & df[[xcol]] >= mins[idx] & df[[xcol]] <= maxs[idx]
   p$layers[[i]]$data <- df[keep, , drop = FALSE]
 }
-# tidy up layers + add your summaries
 # Style
 for (i in seq_along(p$layers)) {
   if (inherits(p$layers[[i]]$geom, "GeomPolygon")) {
@@ -3284,7 +3274,6 @@ for (i in seq_along(p$layers)) {
   keep <- !is.na(mins[idx]) & df[[xcol]] >= mins[idx] & df[[xcol]] <= maxs[idx]
   p$layers[[i]]$data <- df[keep, , drop = FALSE]
 }
-# tidy up layers + add your summaries
 # Style
 for (i in seq_along(p$layers)) {
   if (inherits(p$layers[[i]]$geom, "GeomPolygon")) {
@@ -3353,7 +3342,6 @@ for (i in seq_along(p$layers)) {
   keep <- !is.na(mins[idx]) & df[[xcol]] >= mins[idx] & df[[xcol]] <= maxs[idx]
   p$layers[[i]]$data <- df[keep, , drop = FALSE]
 }
-# tidy up layers + add your summaries
 # Style
 for (i in seq_along(p$layers)) {
   if (inherits(p$layers[[i]]$geom, "GeomPolygon")) {
